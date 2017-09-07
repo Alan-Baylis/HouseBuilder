@@ -1,0 +1,9 @@
+c:\users\bena\documents\visual studio 2015\Projects\House\House\bin\Debug\House.exe.config
+c:\users\bena\documents\visual studio 2015\Projects\House\House\bin\Debug\House.exe
+c:\users\bena\documents\visual studio 2015\Projects\House\House\bin\Debug\House.pdb
+c:\users\bena\documents\visual studio 2015\Projects\House\House\obj\Debug\House.csprojResolveAssemblyReference.cache
+c:\users\bena\documents\visual studio 2015\Projects\House\House\obj\Debug\House.Form1.resources
+c:\users\bena\documents\visual studio 2015\Projects\House\House\obj\Debug\House.Properties.Resources.resources
+c:\users\bena\documents\visual studio 2015\Projects\House\House\obj\Debug\House.csproj.GenerateResource.Cache
+c:\users\bena\documents\visual studio 2015\Projects\House\House\obj\Debug\House.exe
+c:\users\bena\documents\visual studio 2015\Projects\House\House\obj\Debug\House.pdb
