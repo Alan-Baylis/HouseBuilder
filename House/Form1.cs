@@ -12,6 +12,8 @@ namespace House
 {
     public partial class Form1 : Form
     {
+        HouseViewModel HouseVM;
+
         public Form1()
         {
             InitializeComponent();
@@ -75,7 +77,9 @@ namespace House
                     .setCommonAreaFlooring(commonFlooringComboBox.SelectedItem.ToString())
                     .Build();
 
-                resultTextBox.Text = myHouse.ToString();
+                HouseVM = new HouseViewModel(myHouse);
+
+                resultTextBox.Text = HouseVM.ToString();
 
         }
 
