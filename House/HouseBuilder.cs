@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+//This class (HouseBuilder) is no longer in use after refactoring in HouseViewModelBuilder
 namespace House
 {
-    class HouseBuilder
+    public class HouseBuilder
     {
-        private House house;
+        House house;
 
         public HouseBuilder()
         {

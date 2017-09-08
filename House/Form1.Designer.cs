@@ -66,7 +66,7 @@
             this.resultTextBox.Name = "resultTextBox";
             this.resultTextBox.Size = new System.Drawing.Size(261, 536);
             this.resultTextBox.TabIndex = 0;
-            this.resultTextBox.Text = "Build your dream house!";
+            this.resultTextBox.Text = "Build your dream houseBuilderVM!";
             // 
             // label1
             // 

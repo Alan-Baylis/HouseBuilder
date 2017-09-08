@@ -46,9 +46,9 @@ namespace House
             
                 string storyText = "";
                 if (oneRadioButton.Checked)
-                    storyText = "One story house";
+                    storyText = "One story houseBuilderVM";
                 else if (twoRadioButton.Checked)
-                    storyText = "Two story house";
+                    storyText = "Two story houseBuilderVM";
               
                 string kitchenText = "";
                 if (regularRadioButton.Checked)
@@ -62,22 +62,19 @@ namespace House
 
                 string garageText = garageCheckBox.Checked ?
                     "You've chosen to add a third garage bay; good place to hide a body"
-                    : "You've chosen not to add a third garage bay. Why even build a house?";
+                    : "You've chosen not to add a third garage bay. Why even build a houseBuilderVM?";
 
-                House myHouse;
-                myHouse = new HouseBuilder()
-                    .setName(nameTextBox.Text)
-                    .setBasement(basementText)
-                    .setGarage(garageText)
-                    .setkitchen(kitchenText)
-                    .setStories(storyText)
-                    .setRooms(Convert.ToInt32(roomNumericUpDown.Value))
-                    .setBathroomFlooring(bathFlooringComboBox.SelectedItem.ToString())
-                    .setBedroomFlooring(bedFlooringComboBox.SelectedItem.ToString())
-                    .setCommonAreaFlooring(commonFlooringComboBox.SelectedItem.ToString())
-                    .Build();
-
-                HouseVM = new HouseViewModel(myHouse);
+             HouseVM = new HouseViewModelBuilder()
+                        .setName(nameTextBox.Text)
+                        .setBasement(basementText)
+                        .setGarage(garageText)
+                        .setkitchen(kitchenText)
+                        .setStories(storyText)
+                        .setRooms(Convert.ToInt32(roomNumericUpDown.Value))
+                        .setBathroomFlooring(bathFlooringComboBox.SelectedItem.ToString())
+                        .setBedroomFlooring(bedFlooringComboBox.SelectedItem.ToString())
+                        .setCommonAreaFlooring(commonFlooringComboBox.SelectedItem.ToString())
+                        .Build();
 
                 resultTextBox.Text = HouseVM.ToString();
 

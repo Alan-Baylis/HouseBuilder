@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace House
 {
-    class House
+    public class House
     {
         public string name;
         public string stories;

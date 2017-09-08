@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace House
 {
-    class HouseViewModel
+    public class HouseViewModel
     {
-        private House House;
+        public House House;
 
         public string Name
         {
@@ -91,7 +91,7 @@ namespace House
                                                     .Append("Common Area Flooring: {8}")
                                                     .ToString();
 
-            string[] houseTraits = { House.name, House.basement, House.garage, House.kitchen, House.rooms.ToString(), House.stories, House.bathroomFlooring, House.bedroomFlooring, House.commonAreaFlooring };
+            string[] houseTraits = { Name, Basement, Garage, Kitchen, Rooms.ToString(), Stories, BathroomFlooring, BedroomFlooring, CommonAreaFlooring };
             String formattedHouse = String.Format(houseFormat, houseTraits);
             return formattedHouse;
         }
