@@ -333,6 +333,8 @@
             // 
             // housesListView
             // 
+            this.housesListView.Activation = System.Windows.Forms.ItemActivation.OneClick;
+            this.housesListView.Alignment = System.Windows.Forms.ListViewAlignment.Left;
             this.housesListView.Location = new System.Drawing.Point(618, -1);
             this.housesListView.Name = "housesListView";
             this.housesListView.Size = new System.Drawing.Size(347, 659);

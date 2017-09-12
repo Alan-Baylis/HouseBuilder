@@ -13,7 +13,7 @@ namespace House
     public partial class Form1 : Form
     {
         List<HouseViewModel> HouseVMList = new List<HouseViewModel>();
-
+        
         public Form1()
         {
             InitializeComponent();
@@ -22,6 +22,13 @@ namespace House
             commonFlooringComboBox.Items.AddRange(values);
             bedFlooringComboBox.Items.AddRange(values);
             bathFlooringComboBox.Items.AddRange(values);
+
+            housesListView.View = View.Details;
+            housesListView.GridLines = true;
+            housesListView.FullRowSelect = true;
+            housesListView.Columns.Add("House", 100);
+
+            
         }
 
         private void buildButton_Click(object sender, EventArgs e)
@@ -77,8 +84,6 @@ namespace House
                         .setCommonAreaFlooring(commonFlooringComboBox.SelectedItem.ToString())
                         .Build();
 
-            resultTextBox.Text = houseVM.ToString();
-
             HouseVMList.Add(houseVM);
 
             housesListView.Items.Clear();
@@ -89,8 +94,17 @@ namespace House
                 item.Text = house.Name;
                 housesListView.Items.Add(item);
             }
-            
-            //housesListView.Items.AddRange(HouseVMList.ToArray());
+           
+           
+            //resultTextBox.Text = houseVM.ToString();
+        }
+
+        private void housesListView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = housesListView.SelectedIndices[0];
+            HouseViewModel selectedHouseVM = HouseVMList[selectedIndex];
+
+            resultTextBox.Text = selectedHouseVM.ToString();
         }
 
         private void roomNumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -114,11 +128,6 @@ namespace House
         }
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void housesListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
