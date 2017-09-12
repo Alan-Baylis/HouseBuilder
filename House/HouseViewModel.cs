@@ -96,11 +96,6 @@ namespace House
             return formattedHouse;
         }
 
-        public HouseViewModel(House house)
-        {
-            this.House = house;
-        }
-
         public HouseViewModel()
         {
             this.House = new House();

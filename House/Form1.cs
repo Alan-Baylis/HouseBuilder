@@ -12,7 +12,7 @@ namespace House
 {
     public partial class Form1 : Form
     {
-        HouseViewModel HouseVM;
+        List<HouseViewModel> HouseVMList = new List<HouseViewModel>();
 
         public Form1()
         {
@@ -46,9 +46,9 @@ namespace House
             
                 string storyText = "";
                 if (oneRadioButton.Checked)
-                    storyText = "One story houseBuilderVM";
+                    storyText = "One story house";
                 else if (twoRadioButton.Checked)
-                    storyText = "Two story houseBuilderVM";
+                    storyText = "Two story house";
               
                 string kitchenText = "";
                 if (regularRadioButton.Checked)
@@ -64,7 +64,8 @@ namespace House
                     "You've chosen to add a third garage bay; good place to hide a body"
                     : "You've chosen not to add a third garage bay. Why even build a houseBuilderVM?";
 
-             HouseVM = new HouseViewModelBuilder()
+            HouseViewModel houseVM;
+            houseVM = new HouseViewModelBuilder()
                         .setName(nameTextBox.Text)
                         .setBasement(basementText)
                         .setGarage(garageText)
@@ -76,8 +77,20 @@ namespace House
                         .setCommonAreaFlooring(commonFlooringComboBox.SelectedItem.ToString())
                         .Build();
 
-                resultTextBox.Text = HouseVM.ToString();
+            resultTextBox.Text = houseVM.ToString();
 
+            HouseVMList.Add(houseVM);
+
+            housesListView.Items.Clear();
+
+            foreach (var house in HouseVMList)
+            {
+                var item = new ListViewItem();
+                item.Text = house.Name;
+                housesListView.Items.Add(item);
+            }
+            
+            //housesListView.Items.AddRange(HouseVMList.ToArray());
         }
 
         private void roomNumericUpDown_ValueChanged(object sender, EventArgs e)
@@ -101,6 +114,11 @@ namespace House
         }
 
         private void nameTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void housesListView_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
