@@ -21,13 +21,13 @@ namespace House
             return this;
         }
 
-        public HouseViewModelBuilder setStories(string stories)
+        public HouseViewModelBuilder setStories(int stories)
         {
             houseBuilderVM.Stories = stories;
             return this;
         }
 
-        public HouseViewModelBuilder setGarage(string garage)
+        public HouseViewModelBuilder setGarage(bool garage)
         {
             houseBuilderVM.Garage = garage;
             return this;
@@ -39,7 +39,7 @@ namespace House
             return this;
         }
 
-        public HouseViewModelBuilder setBasement(string basement)
+        public HouseViewModelBuilder setBasement(bool basement)
         {
             houseBuilderVM.Basement = basement;
             return this;

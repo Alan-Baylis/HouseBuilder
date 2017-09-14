@@ -16,34 +16,34 @@ namespace House
             get { return House.name; }
         }
 
-        public string Stories
+        public int Stories
         {
             set { House.stories = value; }
             get { return House.stories; }
         }
 
-        public string Basement
-        {
-            set { House.basement = value; }
-            get { return House.basement; }
-        }
-
-        public string Garage
+        public bool Garage
         {
             set { House.garage = value; }
             get { return House.garage; }
-        }
-
-        public string Kitchen
-        {
-            set { House.kitchen = value; }
-            get { return House.kitchen; }
         }
 
         public int Rooms
         {
             set { House.rooms = value; }
             get { return House.rooms; }
+        }
+
+        public bool Basement
+        {
+            set { House.basement = value; }
+            get { return House.basement; }
+        }
+
+        public string Kitchen
+        {
+            set { House.kitchen = value; }
+            get { return House.kitchen; }
         }
 
         public string BathroomFlooring
@@ -74,15 +74,15 @@ namespace House
             string crlfs = "\r\n\r\n";
             string houseFormat = new StringBuilder().Append("Name: {0}")
                                                     .Append(crlfs)
-                                                    .Append("Basement: {1}")
+                                                    .Append("Stories: {5}")
                                                     .Append(crlfs)
                                                     .Append("Garage: {2}")
                                                     .Append(crlfs)
-                                                    .Append("Kitchen: {3}")
-                                                    .Append(crlfs)
                                                     .Append("Rooms: {4}")
                                                     .Append(crlfs)
-                                                    .Append("Stories: {5}")
+                                                    .Append("Basement: {1}")
+                                                    .Append(crlfs)
+                                                    .Append("Kitchen: {3}")
                                                     .Append(crlfs)
                                                     .Append("Bathroom Flooring: {6}")
                                                     .Append(crlfs)
@@ -91,7 +91,7 @@ namespace House
                                                     .Append("Common Area Flooring: {8}")
                                                     .ToString();
 
-            string[] houseTraits = { Name, Basement, Garage, Kitchen, Rooms.ToString(), Stories, BathroomFlooring, BedroomFlooring, CommonAreaFlooring };
+            string[] houseTraits = { Name, Basement.ToString(), Garage.ToString(), Kitchen, Rooms.ToString(), Stories.ToString(), BathroomFlooring, BedroomFlooring, CommonAreaFlooring };
             String formattedHouse = String.Format(houseFormat, houseTraits);
             return formattedHouse;
         }

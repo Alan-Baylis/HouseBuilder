@@ -9,10 +9,10 @@ namespace House
     public class House
     {
         public string name;
-        public string stories;
-        public string basement;
+        public int stories;
+        public bool garage;
         public int rooms;
-        public string garage;
+        public bool basement;
         public string kitchen;
         public string bathroomFlooring;
         public string bedroomFlooring;
