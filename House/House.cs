@@ -8,14 +8,18 @@ namespace House
 {
     public class House
     {
-        public string name;
-        public int stories;
-        public bool garage;
-        public int rooms;
-        public bool basement;
-        public string kitchen;
-        public string bathroomFlooring;
-        public string bedroomFlooring;
-        public string commonAreaFlooring;
+        public string Name;
+        public int Stories;
+        public bool Garage;
+        public int Rooms;
+        public bool Basement;
+        public string BathroomFlooring;
+        public string BedroomFlooring;
+        public string CommonAreaFlooring;
+        public KitchenType Kitchen;
+        public enum KitchenType
+        {
+            Regular = 0, Gormet = 1
+        }
     }
 }

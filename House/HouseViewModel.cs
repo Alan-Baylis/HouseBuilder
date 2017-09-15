@@ -8,60 +8,64 @@ namespace House
 {
     public class HouseViewModel
     {
-        public House House;
+        private House House;
 
         public string Name
         {
-            set { House.name = value; }
-            get { return House.name; }
+            set { House.Name = value; }
+            get { return House.Name; }
         }
 
         public int Stories
         {
-            set { House.stories = value; }
-            get { return House.stories; }
+            set { House.Stories = value; }
+            get { return House.Stories; }
         }
 
         public bool Garage
         {
-            set { House.garage = value; }
-            get { return House.garage; }
+            set { House.Garage = value; }
+            get { return House.Garage; }
         }
 
         public int Rooms
         {
-            set { House.rooms = value; }
-            get { return House.rooms; }
+            set { House.Rooms = value; }
+            get { return House.Rooms; }
         }
 
         public bool Basement
         {
-            set { House.basement = value; }
-            get { return House.basement; }
+            set { House.Basement = value; }
+            get { return House.Basement; }
         }
 
-        public string Kitchen
+        public string GetKitchenTypeString()
         {
-            set { House.kitchen = value; }
-            get { return House.kitchen; }
+            return Enum.GetName(typeof(House.KitchenType), House.Kitchen);
+        }
+
+        public void setKitchen(House.KitchenType kitchen)
+        {
+            kitchen = House.Kitchen;
         }
 
         public string BathroomFlooring
         {
-            set { House.bathroomFlooring = value; }
-            get { return House.bathroomFlooring; }
+            set { House.BathroomFlooring = value; }
+            get { return House.BathroomFlooring; }
         }
 
         public string BedroomFlooring
         {
-            set { House.bedroomFlooring = value; }
-            get { return House.bedroomFlooring; }
+            set { House.BedroomFlooring = value; }
+            get { return House.BedroomFlooring; }
         }
 
         public string CommonAreaFlooring
         {
-            set { House.commonAreaFlooring = value; }
-            get { return House.commonAreaFlooring; }
+            set { House.CommonAreaFlooring = value; }
+            get { return House.CommonAreaFlooring; }
         }
 
         public override string ToString()
@@ -91,7 +95,7 @@ namespace House
                                                     .Append("Common Area Flooring: {8}")
                                                     .ToString();
 
-            string[] houseTraits = { Name, Basement.ToString(), Garage.ToString(), Kitchen, Rooms.ToString(), Stories.ToString(), BathroomFlooring, BedroomFlooring, CommonAreaFlooring };
+            string[] houseTraits = { Name, Basement.ToString(), Garage.ToString(), GetKitchenTypeString(), Rooms.ToString(), Stories.ToString(), BathroomFlooring, BedroomFlooring, CommonAreaFlooring };
             String formattedHouse = String.Format(houseFormat, houseTraits);
             return formattedHouse;
         }

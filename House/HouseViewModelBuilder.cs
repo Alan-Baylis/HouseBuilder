@@ -45,9 +45,9 @@ namespace House
             return this;
         }
 
-        public HouseViewModelBuilder setkitchen(string kitchen)
+        public HouseViewModelBuilder setkitchen(House.KitchenType kitchen)
         {
-            houseBuilderVM.Kitchen = kitchen;
+            houseBuilderVM.setKitchen(kitchen);
             return this;
         }
 

@@ -12,7 +12,10 @@ namespace House
 {
     public partial class ListForm : Form
     {
-        private HouseOptionsModalForm houseOptions;
+        private HouseOptionsModalForm HouseOptions;
+
+        public List<HouseViewModel> HouseVMList = new List<HouseViewModel>();
+
         public ListForm()
         {
             InitializeComponent();
@@ -20,10 +23,18 @@ namespace House
 
         private void housesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //int selectedIndex = housesListBox.SelectedIndices[0];
-            //HouseViewModel selectedHouseVM = HouseVMList[selectedIndex];
+            if (housesListBox.SelectedIndices.Count.Equals(0))
+            {
+                return;
+            }
+            else
+            {
+                 int selectedIndex = housesListBox.SelectedIndices[0];
 
-            //resultTextBox.Text = selectedHouseVM.ToString();
+                HouseViewModel selectedHouseVM = HouseVMList[selectedIndex];
+
+                resultTextBox.Text = selectedHouseVM.ToString();
+            }
         }
 
         private void ListForm_Load(object sender, EventArgs e)
@@ -33,10 +44,8 @@ namespace House
 
         public void addButton_Click(object sender, EventArgs e)
         {
-            houseOptions = new HouseOptionsModalForm(this);
-            houseOptions.Show();
-
-            this.Hide();
+            HouseOptions = new HouseOptionsModalForm(this);
+            HouseOptions.ShowDialog();
         }
     }
 }
